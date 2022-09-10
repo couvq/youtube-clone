@@ -12,7 +12,13 @@ const ChannelCard = ({ channelDetail }) => {
     <Box
         sx={{
             boxShadow: 'none',
-            borderRadius: '20px'
+            borderRadius: '20px',
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            width: { xs: '356px', md: '320px'},
+            height: '326px',
+            margin: 'auto'
         }}
     >
         <Link
@@ -50,6 +56,12 @@ const ChannelCard = ({ channelDetail }) => {
                             }}
                         />
                 </Typography>
+
+                {channelDetail?.statistics?.subscriberCount && (
+                    <Typography>
+                        {parseInt(channelDetail?.statistics?.subscriberCount).toLocaleString()} Subscribers
+                    </Typography>
+                )}
             </CardContent>
         </Link>
     </Box>
